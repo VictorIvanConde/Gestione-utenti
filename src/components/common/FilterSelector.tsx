@@ -1,23 +1,20 @@
-import React from 'react';
-import type { UserFilterType } from '../../types/user';
-
-interface FilterSelectorProps {
-    currentFilter: UserFilterType;
-    onFilterChange: (filter: UserFilterType) => void;
+interface FilterOption<T> {
+    label: string;
+    value: T;
 }
 
-export const FilterSelector: React.FC<FilterSelectorProps> = ({ currentFilter, onFilterChange }) => {
-    const filters: { label: string; value: UserFilterType }[] = [
-        { label: 'Tutti', value: 'ALL' },
-        { label: 'Attivi', value: 'ACTIVE' },
-        { label: 'Non Attivi', value: 'INACTIVE' },
-    ];
+interface FilterSelectorProps<T> {
+    options: FilterOption<T>[];
+    currentFilter: T;
+    onFilterChange: (filter: T) => void;
+}
 
+export const FilterSelector = <T,>({ options, currentFilter, onFilterChange }: FilterSelectorProps<T>) => {
     return (
         <div className="filters">
-            {filters.map((f) => (
+            {options.map((f, index) => (
                 <button
-                    key={f.value}
+                    key={index}
                     className={`filter-btn ${currentFilter === f.value ? 'active' : ''}`}
                     onClick={() => onFilterChange(f.value)}
                 >

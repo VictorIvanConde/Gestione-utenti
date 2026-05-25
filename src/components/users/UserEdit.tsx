@@ -87,6 +87,7 @@ export const UserEdit: React.FC<UserEditProps> = ({ userId, onSuccess, onCancel 
                             value={formData.username || ''} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={25}
                         />
                     </div>
                     <div className="form-group">
@@ -98,6 +99,7 @@ export const UserEdit: React.FC<UserEditProps> = ({ userId, onSuccess, onCancel 
                             value={formData.email || ''} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={50}
                         />
                     </div>
                     <div className="form-group">
@@ -109,6 +111,7 @@ export const UserEdit: React.FC<UserEditProps> = ({ userId, onSuccess, onCancel 
                             value={formData.firstName || ''} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={30}
                         />
                     </div>
                     <div className="form-group">
@@ -120,6 +123,7 @@ export const UserEdit: React.FC<UserEditProps> = ({ userId, onSuccess, onCancel 
                             value={formData.lastName || ''} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={30}
                         />
                     </div>
                     <div className="form-group">
@@ -130,6 +134,7 @@ export const UserEdit: React.FC<UserEditProps> = ({ userId, onSuccess, onCancel 
                             name="middleName" 
                             value={formData.middleName || ''} 
                             onChange={handleInputChange} 
+                            maxLength={30}
                         />
                     </div>
                     <div className="form-group">

@@ -6,7 +6,7 @@
   --border-color: #2d2d33;
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
-  --accent-color: #8b5cf6; /* Vibrant Violet */
+  --accent-color: #8b5cf6;
   --accent-soft: rgba(139, 92, 246, 0.15);
   --success: #10b981;
   --error: #ef4444;
@@ -22,7 +22,6 @@ body {
   min-height: 100vh;
 }
 
-/* Resetting interference from index.css */
 #root {
   width: 100% !important;
   max-width: 100% !important;
@@ -34,11 +33,10 @@ body {
 
 .container {
   padding: 80px 20px;
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Typography */
 .title {
   font-size: 3rem;
   font-weight: 800;
@@ -47,11 +45,10 @@ body {
   text-align: center;
   width: 100%;
   display: block;
-  /* Simplified gradient and fixed clipping */
   background: linear-gradient(180deg, #ffffff 30%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding: 15px 0; /* Added vertical padding to prevent clipping */
+  padding: 15px 0;
   line-height: 1.2;
 }
 
@@ -62,7 +59,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Card */
 .card {
   background: var(--bg-card);
   border-radius: 16px;
@@ -72,7 +68,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -133,7 +128,6 @@ body {
   transform: none !important;
 }
 
-/* Modern Table */
 .table-container {
   overflow-x: hidden;
   border-radius: 12px;
@@ -149,7 +143,7 @@ body {
 
 .modern-table th {
   background: #1a1a1e;
-  padding: 16px 24px;
+  padding: 12px 16px;
   text-align: left;
   font-size: 0.75rem;
   font-weight: 700;
@@ -157,25 +151,43 @@ body {
   color: var(--text-secondary);
   letter-spacing: 0.05em;
   border-bottom: 1px solid var(--border-color);
-  white-space: nowrap; /* Impedisce l'andata a capo del testo nelle intestazioni */
+  white-space: nowrap;
 }
 
 .modern-table td {
-  padding: 20px 24px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-primary);
   font-size: 0.95rem;
 }
 
-.modern-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clickable-row:hover td {
+  background: rgba(139, 92, 246, 0.08) !important;
+}
+
+.clickable-row:active td {
+  background: rgba(139, 92, 246, 0.12) !important;
+}
+
+.bold-text {
+  font-weight: 700;
+  color: #fff;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
 }
 
 .modern-table tr:last-child td {
   border-bottom: none;
 }
 
-/* Badges */
 .badge {
   padding: 6px 12px;
   border-radius: 8px;
@@ -184,10 +196,88 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap; /* Impedisce l'andata a capo del testo rispetto al tondino */
+  white-space: nowrap;
 }
 
-/* Modal Styles */
+.badge-active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-inactive {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  background: var(--bg-card);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding: 0 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  background: var(--bg-input);
+  padding: 6px;
+  border-radius: 12px;
+  width: fit-content;
+  border: 1px solid var(--border-color);
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -245,90 +335,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.badge-active {
-  background: rgba(16, 185, 129, 0.1);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.badge-inactive {
-  background: rgba(239, 68, 68, 0.1);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-/* Forms */
-.form-group {
-  margin-bottom: 24px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-.form-control {
-  width: 100%;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  padding: 14px 18px;
-  color: var(--text-primary);
-  font-size: 1rem;
-  transition: all 0.2s;
-  box-sizing: border-box;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 4px var(--accent-soft);
-  background: var(--bg-card);
-}
-
-/* Pagination */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 32px;
-  padding: 0 8px;
-}
-
-/* Filters */
-.filters {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
-  background: var(--bg-input);
-  padding: 6px;
-  border-radius: 12px;
-  width: fit-content;
-  border: 1px solid var(--border-color);
-}
-
-.filter-btn {
-  padding: 8px 20px;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text-secondary);
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.2s;
-}
-
-.filter-btn.active {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Loader */
 .loader {
   width: 32px;
   height: 32px;
@@ -347,11 +353,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
-  color: var(--text-secondary);
-  gap: 16px;
-}
-
   min-height: 200px;
   color: var(--text-secondary);
   gap: 16px;

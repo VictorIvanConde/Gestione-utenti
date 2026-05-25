@@ -53,6 +53,7 @@ export const UserCreate: React.FC<UserCreateProps> = ({ onSuccess, onCancel }) =
                             onChange={handleInputChange} 
                             required 
                             placeholder="Es. mario.rossi"
+                            maxLength={25}
                         />
                     </div>
                     <div className="form-group">
@@ -65,6 +66,7 @@ export const UserCreate: React.FC<UserCreateProps> = ({ onSuccess, onCancel }) =
                             onChange={handleInputChange} 
                             required 
                             placeholder="email@esempio.it"
+                            maxLength={50}
                         />
                     </div>
                     <div className="form-group">
@@ -76,6 +78,7 @@ export const UserCreate: React.FC<UserCreateProps> = ({ onSuccess, onCancel }) =
                             value={formData.firstName} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={30}
                         />
                     </div>
                     <div className="form-group">
@@ -87,6 +90,7 @@ export const UserCreate: React.FC<UserCreateProps> = ({ onSuccess, onCancel }) =
                             value={formData.lastName} 
                             onChange={handleInputChange} 
                             required 
+                            maxLength={30}
                         />
                     </div>
                     <div className="form-group" style={{ gridColumn: 'span 2' }}>
@@ -97,6 +101,7 @@ export const UserCreate: React.FC<UserCreateProps> = ({ onSuccess, onCancel }) =
                             name="middleName" 
                             value={formData.middleName} 
                             onChange={handleInputChange} 
+                            maxLength={30}
                         />
                     </div>
                 </div>
