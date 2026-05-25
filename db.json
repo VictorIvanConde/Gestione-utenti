@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "castigatore divino",
+      "email": "angelo.trotta@example.it",
+      "isActive": true,
+      "firstName": "Angelo",
+      "middleName": "Duca",
+      "lastName": "Trotta"
+    },
+    {
+      "id": "2",
+      "username": "mrossi",
+      "email": "mario.rossi@example.it",
+      "isActive": true,
+      "firstName": "Mario",
+      "lastName": "Rossi"
+    },
+    {
+      "id": "3",
+      "username": "gverdi",
+      "email": "giuseppe.verdi@example.it",
+      "isActive": false,
+      "firstName": "Giuseppe",
+      "middleName": "Antonio",
+      "lastName": "Verdi"
+    },
+    {
+      "id": "4",
+      "username": "fbianchi",
+      "email": "francesca.b@example.it",
+      "isActive": true,
+      "firstName": "Francesca",
+      "lastName": "Bianchi"
+    },
+    {
+      "id": "5",
+      "username": "aserafini",
+      "email": "alessandro.s@example.it",
+      "isActive": false,
+      "firstName": "Alessandro",
+      "middleName": "Maria",
+      "lastName": "Serafini"
+    },
+    {
+      "id": "6",
+      "username": "eferrari",
+      "email": "elena.ferrari@example.it",
+      "isActive": false,
+      "firstName": "Elena",
+      "lastName": "Ferrari",
+      "middleName": "corre"
+    },
+    {
+      "id": "7",
+      "username": "gcolombo",
+      "email": "giovanni.c@example.it",
+      "isActive": true,
+      "firstName": "Giovanni",
+      "middleName": "Battista",
+      "lastName": "Colombo"
+    },
+    {
+      "id": "8",
+      "username": "gromano",
+      "email": "giulia.romano@example.it",
+      "isActive": false,
+      "firstName": "Giulia",
+      "lastName": "Romano"
+    },
+    {
+      "id": "9",
+      "username": "asanti",
+      "email": "anna.santi@example.it",
+      "isActive": true,
+      "firstName": "Anna",
+      "middleName": "Rosa",
+      "lastName": "Santi"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
